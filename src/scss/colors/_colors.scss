@@ -1,0 +1,30 @@
+@use "sass:map";
+$color-map: (
+ 
+  "--md-sys-color-background": (
+    "dark":#2F3033,
+
+  ),
+  "--md-sys-color-on-background": (
+    "dark":rgb(225 226 232)
+  ),
+);
+
+@mixin set-colors($color-map) {
+  @each $color-name, $color in $color-map {
+    #{$color-name}: map.get($color, "dark");
+  }
+}
+
+@mixin use-colors(){
+    @include set-colors($color-map);
+    color-scheme: dark;
+ 
+    --md-sys-color-surface-variant:#DEE3EB;
+    --md-sys-color-on-surface-variant: #42474E;
+    --md-sys-color-primary: #006399;
+    --md-sys-color-primary-container: #CDE5FF;
+    --md-sys-color-on-primary-container: #001D32;
+    --md-sys-color-secondary-container:#D4E4F6;
+    --md-sys-color-on-surface: #1B1C1D;  
+}
