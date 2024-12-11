@@ -23,13 +23,13 @@ body {
     position: relative;
     box-sizing: border-box;
 
+		@include window-classes.on-large {
+			grid-template-columns: repeat(12, 1fr);
+		}
+
     @include window-classes.on-medium {
         grid-template-columns: repeat(8, 1fr);
         column-gap: 24px;
-    }
-
-    @include window-classes.on-large {
-        grid-template-columns: repeat(12, 1fr);
     }
 }
 
@@ -41,12 +41,11 @@ section {
     padding-inline: 16px;
     background-color: var(--md-sys-color-background);
 
+    @include window-classes.on-large {
+			padding-inline: 64px;
+		}
     @include window-classes.on-medium {
         padding-inline: 32px;
-    }
-
-    @include window-classes.on-large {
-        padding-inline: 64px;
     }
 }
 
@@ -73,17 +72,16 @@ section {
         }
                          
 
+				@include window-classes.on-large {
+					grid-column: 7 / span 6;
+					justify-content: space-between;
+					height: 100px;
+					grid-template-columns: repeat(3, min-content);
+				}
+
         @include window-classes.on-medium {
             grid-column: 5 / span 4;
         }
-    
-         @include window-classes.on-large {
-            grid-column: 7 / span 6;
-            justify-content: space-between;
-            height: 100px;
-            grid-template-columns: repeat(3, min-content);
-        }
-        
     }
 
     &__content {
@@ -104,13 +102,13 @@ section {
             h2 {
                 @include typography.typography-headline-large;
             }
-        }   
+        }
+				@include window-classes.on-large {
+					grid-column: span 6;
+				}
+
         @include window-classes.on-medium {
             grid-column: span 8;
-        }
-
-        @include window-classes.on-large {
-            grid-column: span 6;
         }
     }
 
@@ -154,20 +152,20 @@ section {
         padding-block: 100px;     
     }
 
-
     &__image {
         grid-column: span 4;
         border-radius: 16px;
         height: 100%;
         overflow: hidden;
      
+				@include window-classes.on-large {
+					grid-column: span 5;
+				}
+
         @include window-classes.on-medium {
             grid-column: span 8;
         }
-        @include window-classes.on-large {
-            grid-column: span 5;
-        }
-
+        
         &--on-right {     
             @include window-classes.on-large {
                 grid-column: 8 / span 5;
@@ -177,8 +175,6 @@ section {
         &--on-blue{
             grid-column: unset;
         }
-
-
     }
 
     &__content {
@@ -197,13 +193,13 @@ section {
             @include typography.typography-headline-medium;
         }
 
+				@include window-classes.on-large {
+					grid-column: 7 / span 6;
+				}
+
         @include window-classes.on-medium {
             grid-column: span 8;
         }
-        @include window-classes.on-large {
-            grid-column: 7 / span 6;
-        }
-
 
         &--on-left {
             @include window-classes.on-large {
@@ -240,7 +236,7 @@ section {
             grid-template-columns: 1fr 1fr;
             gap: inherit;
         }
-    }   
+    }
 }
 
 .section-statement {
@@ -256,30 +252,29 @@ section {
 
     h1, h2, h3, .btn {
         grid-column: span 4;
+				@include window-classes.on-large {
+					grid-column: span 12;
+				}
+
         @include window-classes.on-medium {
             grid-column: span 8;
         }
-    
-        @include window-classes.on-large {
-            grid-column: span 12;
-        }
-        
     }
    
     @include window-classes.on-large {
         padding: 100px 156px;
     }
 
+		h1 {
+			@include typography.typography-display-large;
+		}
+
+		h2 {
+		@include typography.typography-display-medium;
+		}
+
     h3 {
         @include typography.typography-headline-largest;
-    }
-
-    h2 {
-        @include typography.typography-display-medium;
-    }
-
-    h1 {
-        @include typography.typography-display-large;
     }
 }
 
@@ -291,11 +286,12 @@ section {
 
     img {
         grid-column: span 4;
+				@include window-classes.on-large {
+					grid-column: span 12;
+				}
+
         @include window-classes.on-medium {
             grid-column: span 8;
-        }
-        @include window-classes.on-large {
-            grid-column: span 12;
         }
     }
 }
@@ -307,11 +303,11 @@ section {
  
     span {
         grid-column: span 4;
+				@include window-classes.on-large {
+					grid-column: 9 / span 4;
+				}
         @include window-classes.on-medium {
             grid-column: 5 / span 4;
-        }
-        @include window-classes.on-large {
-            grid-column: 9 / span 4;
         }
     }
     p {
