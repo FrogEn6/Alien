@@ -23,20 +23,20 @@ $_private-window-classes-map: (
     }
 }
 
-@mixin on-compact {
-    @include _private-on-window-class("compact") {
-        @content;
-    }
+@mixin on-large {
+	@include _private-on-window-classes(("expanded", "large", "extra-large")) {
+			@content;
+	}
 }
 
 @mixin on-medium {
-    @include _private-on-window-class("medium") {
-        @content;
-    }
+	@include _private-on-window-class("medium") {
+			@content;
+	}
 }
 
-@mixin on-large {
-    @include _private-on-window-classes(("expanded", "large", "extra-large")) {
+@mixin on-compact {
+    @include _private-on-window-class("compact") {
         @content;
     }
 }
